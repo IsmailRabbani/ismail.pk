@@ -1,0 +1,12 @@
+section {
+  padding: 80px 0;
+}
+
+// Special styling for "Areas I Cover" or "Contact"
+// to make them pop against the misty background
+.section-dark {
+  background-color: $color-secondary; // #114d57
+  color: $white;
+
+  h2, p { color: $white; }
+}

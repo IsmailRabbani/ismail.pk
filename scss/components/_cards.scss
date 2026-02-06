@@ -1,0 +1,17 @@
+.card {
+  background-color: $white;
+  padding: 40px;
+  border-radius: $border-radius;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+  height: 100%; // Full height of column
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}

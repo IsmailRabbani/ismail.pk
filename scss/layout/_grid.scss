@@ -1,0 +1,28 @@
+.container {
+  width: 90%;
+  max-width: $container-width;
+  margin: 0 auto; // Centers the container
+}
+
+.row {
+  display: flex;
+  flex-direction: column; // Mobile: Stack
+  gap: 30px; // Space between items
+
+  @include desktop {
+    flex-direction: row; // Desktop: Side by side
+    align-items: flex-start;
+  }
+}
+
+// Columns
+.col-12 { width: 100%; }
+
+@include desktop {
+  .col-6 { width: 50%; }
+  .col-4 { width: 33.33%; }
+  .col-8 { width: 66.66%; }
+}
+
+// Helper to center text
+.text-center { text-align: center; }

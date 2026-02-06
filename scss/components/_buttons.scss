@@ -1,0 +1,32 @@
+.btn {
+  display: inline-block;
+  background-color: $color-primary; // #1b6e0e
+  color: $white;
+  padding: 12px 35px;
+  border-radius: 50px; // Pill shape
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: 2px solid $color-primary;
+  cursor: pointer;
+  margin-top: 20px;
+
+  &:hover {
+    background-color: transparent;
+    color: $color-primary; // Green text, transparent bg
+  }
+}
+
+// Variation for Secondary Actions
+.btn-outline {
+  background-color: transparent;
+  color: $color-secondary;
+  border: 2px solid $color-secondary;
+
+  &:hover {
+    background-color: $color-secondary;
+    color: $white;
+  }
+}

@@ -1,0 +1,24 @@
+// === COLORS ===
+// The Palette
+$forest-green:      #1b6e0e; // Accent & Buttons
+$deep-teal:         #114d57; // Headings
+$misty-blue:        #c5d7da; // Body Background
+$white:             #ffffff;
+$dark-text:         #0f2d33; // Very dark teal for readability
+
+// Functional Assignment
+$color-primary:     $forest-green;
+$color-secondary:   $deep-teal;
+$color-bg-body:     $misty-blue;
+$color-text-body:   $dark-text;
+$color-text-head:   $deep-teal;
+$color-card-bg:     $white;
+
+// === TYPOGRAPHY ===
+$font-heading:      'Playfair Display', serif;
+$font-body:         'Lato', sans-serif;
+
+// === SPACING & SIZES ===
+$container-width:   1600px; // WIDER, CINEMATIC FEEL
+$gutter:            40px;            // More space between columns
+$border-radius:     8px;

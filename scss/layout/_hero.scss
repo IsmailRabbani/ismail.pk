@@ -1,0 +1,42 @@
+.hero {
+  padding: 60px 0;
+  min-height: 60vh; // Takes up most of screen
+  display: flex;
+  align-items: center;
+
+  .hero-content {
+    order: 2; // Mobile: Text below image
+    display: flex;          // Add flex
+    flex-direction: column; // Stack elements vertically
+    @include desktop {
+      order: 1;
+    }
+    @include l-desktop {
+      margin-top: 20px;
+      min-height: 500px;    // Even more height for larger screens
+    }
+    .btn {
+      align-self: flex-start; // Keeps the button from stretching full width
+      @include desktop {
+        margin-top: auto;     // Pushes the button to the bottom of the container
+      }
+    }
+  }
+
+  .hero-image {
+    order: 1;
+    position: relative;
+    margin-bottom: 30px;
+
+    @include desktop {
+      order: 2;
+      margin-bottom: 0;
+    }
+
+    img {
+      border-radius: 0 0 150px 150px; // Arch Shape
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border: 5px solid $white;
+    }
+  }
+}

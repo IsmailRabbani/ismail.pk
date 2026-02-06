@@ -1,0 +1,69 @@
+.services-section {
+  padding: 100px 0;
+
+  .services-header {
+    margin-bottom: 60px;
+    max-width: 600px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr; // Mobile: 1 col
+    gap: 40px; // Big gaps
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr; // Desktop: 2x2 Grid
+    }
+  }
+}
+
+.service-card {
+  background-color: $white;
+  padding: 60px 50px; // Huge padding
+  border-radius: $border-radius;
+  position: relative;
+  overflow: hidden; // Keeps the watermark inside
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  min-height: 400px; // Force them tall
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; // Push text to bottom
+
+  // The Watermark Number (01, 02)
+  .service-number {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-size: 10rem; // GIANT
+    font-weight: 700;
+    color: rgba($deep-teal, 0.05); // Very faint
+    font-family: $font-heading;
+    transition: color 0.4s ease;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.1rem;
+    color: lighten($color-text-body, 10%);
+  }
+
+  // Hover Effect: Card turns Dark Teal, Text White
+  &:hover {
+    background-color: $deep-teal;
+    transform: translateY(-10px);
+
+    h3, p { color: $white; }
+
+    .service-number {
+      color: rgba($white, 0.1); // Watermark becomes light
+    }
+  }
+}

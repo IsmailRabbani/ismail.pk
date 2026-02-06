@@ -1,0 +1,88 @@
+.about-section {
+  padding: 120px 0;
+  position: relative;
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+      align-items: center; // Vertically center
+    }
+  }
+
+  // 1. The Image (Left Side)
+  .about-image-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    @include desktop {
+      width: 45%; // Takes less than half
+    }
+
+    img {
+      width: 100%;
+      height: 600px; // Tall, impressive image
+      object-fit: cover;
+      border-radius: $border-radius;
+      filter: grayscale(100%); // Makes it look artistic (optional)
+      transition: filter 0.5s ease;
+    }
+
+    // The Green Solid Shadow
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      width: 100%;
+      height: 100%;
+      background-color: $forest-green; // #1b6e0e
+      z-index: -1; // Behind image
+      border-radius: $border-radius;
+    }
+
+    &:hover img {
+      filter: grayscale(0%); // Color reveals on hover
+    }
+  }
+
+  // 2. The Text (Right Side - Overlapping)
+  .about-content {
+    width: 100%;
+    background-color: $white;
+    padding: 40px;
+    margin-top: -50px; // Pull up to overlap on mobile
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    border-radius: $border-radius;
+
+    @include desktop {
+      width: 60%; // Wider text area
+      margin-top: 0;
+      margin-left: -80px; // PULL LEFT to overlap the image
+      padding: 80px;
+    }
+
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      color: $deep-teal;
+    }
+
+    // A small "Stats" bar inside the text
+    .stats-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid rgba($deep-teal, 0.2);
+
+      .stat-item {
+        strong { font-size: 2.5rem; display: block; color: $forest-green; line-height: 1; }
+        span { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+      }
+    }
+  }
+}

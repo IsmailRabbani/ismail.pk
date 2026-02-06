@@ -1,0 +1,122 @@
+footer {
+  background-color: $deep-teal; // #114d57
+  color: $white;
+  padding: 100px 0 40px 0; // Big top padding for cinematic look
+  margin-top: 0; // Connected directly to previous section
+
+  // --- TOP SECTION (Logo & Contact) ---
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  // LEFT: The Brand
+  .footer-brand {
+    .footer-logo {
+        width: 300px;
+        height: 250px;
+        margin-left: -50px;
+    }
+
+    .footer-tagline {
+      font-family: $font-body; // Lato
+      font-size: 1.2rem;
+      color: rgba($white, 0.6); // Muted white
+      line-height: 1.5;
+    }
+  }
+
+  // RIGHT: The Contact Info
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include desktop {
+      text-align: right; // Align text to the right on desktop
+      align-items: flex-end;
+    }
+
+    .contact-link {
+      color: $white;
+      font-family: $font-heading; // Playfair for email looks elegant
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+      position: relative;
+
+      // Underline animation on hover
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        right: 0; // Starts from right
+        background-color: $forest-green;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: $forest-green; // #1b6e0e
+        &::after { width: 100%; }
+      }
+    }
+
+    .address {
+      font-size: 1rem;
+      color: rgba($white, 0.6);
+      line-height: 1.6;
+    }
+  }
+
+  // --- THE DIVIDER ---
+  .footer-divider {
+    border: 0;
+    height: 1px;
+    background: rgba($white, 0.1); // Very subtle line
+    margin-bottom: 30px;
+  }
+
+  // --- BOTTOM SECTION (Copyright & Icons) ---
+  .footer-bottom {
+    display: flex;
+    flex-direction: column-reverse; // Mobile: Icons on top, Copy on bottom
+    gap: 20px;
+    align-items: center;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .copyright p {
+      font-size: 0.9rem;
+      color: rgba($white, 0.4);
+      margin: 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 25px;
+
+      a {
+        color: $white;
+        font-size: 1.5rem;
+        transition: transform 0.3s, color 0.3s;
+
+        &:hover {
+          transform: translateY(-3px); // Little jump up
+        }
+      }
+    }
+  }
+}

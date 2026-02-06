@@ -1,0 +1,14 @@
+//===== MIXINS
+// Breakpoint for Tablets/Desktops (768px)
+@mixin desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// Breakpoint for Large Desktops/Monitors (1200px)
+@mixin l-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
