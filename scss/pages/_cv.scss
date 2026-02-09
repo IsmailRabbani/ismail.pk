@@ -1,0 +1,269 @@
+// scss/pages/_cv.scss
+
+// 1. PAGE BACKGROUND
+.cv-page {
+  background-color: $misty-blue; // #c5d7da (Your Landing Page Color)
+  font-family: 'Lato', sans-serif;
+}
+
+// 2. THE HERO WITH THE PATTERN
+.cv-hero-pattern {
+  background-color: $misty-blue; // #114d57
+  color: $white;
+  padding: 120px 0 140px 0; // Huge bottom padding to allow overlap
+  position: relative;
+  .hero-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .status-pill {
+    background: rgba($forest-green, 0.2);
+    color: $forest-green;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: $forest-green;
+      border-radius: 50%;
+      box-shadow: 0 0 5px $forest-green; }
+  }
+  .contact-row {
+    display: flex;
+    gap: 20px;
+    color: $deep-teal;
+    i {
+      color: $forest-green;
+      margin-right: 5px;
+    }
+  }
+}
+
+// 3. THE OVERLAP CONTAINER
+.cv-content-wrapper {
+  background-color: $deep-teal; // #114d57
+  padding-top: 50px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 10;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+}
+
+// 4. THE GRID SYSTEM
+.cv-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+
+  @include desktop {
+    grid-template-columns: 2fr 1fr; // Main (Wide) | Sidebar (Narrow)
+  }
+}
+
+// 5. CARD STYLING
+.cv-card {
+  background: $white;
+  padding: 30px; // Generous padding
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08); // Premium shadow
+  margin-bottom: 30px;
+
+  // Headers inside cards
+  .card-title {
+    font-size: 1.1rem;
+    color: $deep-teal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid $forest-green;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+    i {
+      color: $forest-green;
+      margin-right: 8px; }
+  }
+}
+
+// Profile Summary
+.summary-card {
+  border-left: 5px solid $forest-green; // Accent line
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $dark-text; }
+}
+
+// Timeline
+.job-item {
+  margin-bottom: 40px;
+  position: relative;
+
+  .job-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:
+    space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+    h4 {
+      font-size: 1.3rem;
+      color: $deep-teal;
+      margin: 0;
+    }
+    .company {
+      font-weight: 700;
+      color: #777;
+      width: 100%;
+      display: block;
+      margin-top: 5px;
+    }
+    .date-badge {
+      background: $misty-blue;
+      color: $deep-teal;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+
+  ul {
+    padding-left: 18px;
+    color: lighten($dark-text, 10%);
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+// Education Row
+.edu-row {
+  display: flex; gap: 20px;
+  .edu-item {
+    flex: 1;
+    background: lighten($misty-blue, 10%);
+    padding: 15px;
+    border-radius: 8px;
+    strong {
+      display: block;
+      color: $deep-teal;
+    }
+    span {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    small {
+      color: $forest-green;
+      font-weight: 700;
+    }
+  }
+}
+
+// Sidebar: Photo
+.profile-photo-card {
+  text-align: center;
+  .cv-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid $forest-green;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: -80px;
+    margin-bottom: 20px;
+    background-color: $white;
+  }
+
+  .social-links-row {
+    display: flex;
+    justify-content:
+    center; gap: 15px;
+    a {
+      width: 40px;
+      height: 40px;
+      background: $deep-teal;
+      color: $white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      &:hover {
+        background: $forest-green;
+      }
+    }
+  }
+}
+
+// Sidebar: Skills
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  .tag {
+    background: lighten($misty-blue, 10%);
+    color: $deep-teal;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+}
+
+// Sidebar: Checklist
+.check-list {
+  list-style: none;
+  padding: 0;
+  li {
+    display: flex;
+    align-items:
+    center; gap: 10px;
+    margin-bottom: 10px;
+    color: $dark-text;
+    i {
+      color: $forest-green;
+    }
+  }
+}
+
+// Sidebar: Languages
+.lang-row {
+  display: flex;
+  justify-content:
+  space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: $deep-teal;
+  .dots {
+    display: flex;
+    gap: 4px;
+    .fill {
+      width: 8px;
+      height: 8px;
+      background: $forest-green;
+      border-radius: 50%;
+    }
+  }
+}
+
+// PRINT FIX
+@media print {
+  header, .hero-actions, footer { display: none !important; }
+  .cv-hero-pattern { padding: 40px 0 !important; background: $deep-teal !important; -webkit-print-color-adjust: exact; }
+  .cv-content-wrapper { margin-top: 0 !important; }
+  .cv-card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+  body { background-color: white; }
+}

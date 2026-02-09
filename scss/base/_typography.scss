@@ -22,3 +22,13 @@ p {
   font-size: 1rem;
   @include desktop { font-size: 1.1rem; }
 }
+
+.text-overline {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $color-primary; // Green
+  margin-bottom: 10px;
+  display: block;
+}

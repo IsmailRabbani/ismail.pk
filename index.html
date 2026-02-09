@@ -30,7 +30,7 @@
           <a href="#projects">Work</a>
           <a href="#contact">Contact</a>
           <!-- CV BUTTON -->
-          <a href="/cv/my-cv.html" target="_blank" style="color: #1b6e0e;">View CV</a>
+          <a href="my-resume.html" target="_blank" style="color: #1b6e0e;">View CV</a>
         </nav>
       </div>
     </div>
@@ -54,11 +54,6 @@
   </section>
 
   <!-- ABOUT SECTION -->
-  <!-- ... Header ... -->
-
-<!-- HERO (Keep your existing Hero) -->
-
-<!-- UNIQUE ABOUT SECTION -->
 <section class="about-section" id="about">
   <div class="container">
     <div class="about-grid">
@@ -95,7 +90,7 @@
           </div>
         </div>
 
-        <a href="/cv/index.html" class="btn default" style="margin-top: 30px;">Download My CV</a>
+        <a href="/cv/index.html" class="btn default">Download My CV</a>
       </div>
     </div>
   </div>
@@ -183,13 +178,46 @@
       <!-- Left Side: Big Brand -->
       <div class="footer-brand">
         <div class="footer-logo">
-        <img src="images/ismail-logo-footer.png"  alt="Ismail's website logo">
-      </div>
+          <img src="images/ismail-logo-footer.png"  alt="Ismail's website logo">
+        </div>
         <p class="footer-tagline">
           Project Management.<br>
           Web Strategy.<br>
           Digital Growth.
         </p>
+      </div>
+
+      <!-- Middle: Contact Form -->
+      <div class="contact">
+        <h3>Email Me</h3>
+        <form id="contactForm">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name" id="name" required>
+          </p>
+          <p>
+            <label>Company</label>
+            <input type="text" name="company" id="company">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="email" id="email" required>
+          </p>
+          <p>
+            <label>Phone Number</label>
+            <input type="number" name="phone" id="phone">
+          </p>
+          <p class="full">
+            <label>Message</label>
+            <textarea name="message" rows="5" id="message"></textarea>
+          </p>
+
+          <div class="alert">Thank you! for submitting the form</div>
+
+          <p class="full">
+            <button type="submit" class="btn">Submit</button>
+          </p>
+        </form>
       </div>
 
       <!-- Right Side: Contact Details -->
@@ -202,7 +230,13 @@
         </p>
         <a href="tel:+923490246626" class="contact-link phone">+92 349-0246626</a>
       </div>
+
     </div>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="main.js"></script>
 
     <!-- Divider Line -->
     <hr class="footer-divider">
@@ -213,22 +247,22 @@
         <p>&copy; 2026 Ismail Rabbani. All rights reserved.</p>
       </div>
 
-      <div class="social-links">
+          <div class="social-links">
           <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/ismail-rabbani/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <!-- GitHub -->
-          <a href="https://github.com/IsmailRabbani" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/Ismail.rabbani07/" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-          </a>
+            <a href="https://www.linkedin.com/in/ismail-rabbani/" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/IsmailRabbani" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/Ismail.rabbani07/" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
         </div>
       </div>
-
-    </div>
-  </footer>
+    </footer>
+  </body>
 </html>
