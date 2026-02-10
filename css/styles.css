@@ -36,7 +36,7 @@ h1 {
 }
 @media (min-width: 768px) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -401,6 +401,97 @@ header nav a:hover {
   margin: 0 auto;
 }
 
+/* Portfolio Section */
+.portfolio-section {
+  padding: 100px 0;
+}
+.portfolio-section .services-header {
+  margin-bottom: 18px;
+}
+.portfolio-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.portfolio-prev, .portfolio-next {
+  background: #ffffff;
+  border: 1px solid #114d57;
+  color: #114d57;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.portfolio-slider {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.portfolio-slider::-webkit-scrollbar { display: none; }
+.portfolio-track {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+.portfolio-card {
+  flex: 0 0 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.35s ease;
+}
+.portfolio-card:hover { transform: translateY(-6px); }
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27,110,14,0.0) 30%, rgba(27,110,14,0.92) 100%);
+  color: #ffffff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  border-radius: 8px;
+  transition: opacity 0.28s ease;
+}
+.portfolio-card:hover .portfolio-overlay, .portfolio-card:focus-within .portfolio-overlay {
+  opacity: 1;
+}
+.portfolio-overlay h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+.portfolio-overlay p {
+  margin: 0 0 12px 0;
+  color: rgba(255,255,255,0.95);
+}
+.portfolio-link {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.portfolio-note {
+  margin-top: 14px;
+  color: rgba(17,77,87,0.8);
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .portfolio-card { flex: 0 0 calc(50% - 12px); height: 360px; }
+}
+@media (min-width: 1200px) {
+  .portfolio-card { flex: 0 0 calc(33.333% - 16px); height: 360px; }
+  .portfolio-controls { justify-content: flex-end; }
+}
+
 .row {
   display: flex;
   flex-direction: column;
@@ -542,6 +633,7 @@ footer .footer-bottom {
   flex-direction: column-reverse;
   gap: 20px;
   align-items: center;
+  padding: 0 24px;
 }
 @media (min-width: 768px) {
   footer .footer-bottom {

@@ -93,3 +93,28 @@ function saveMessage(name, company, email, phone, message){
     console.warn('Failed to save message:', err);
   }
 }
+
+// Simple horizontal slider controls for portfolio
+document.addEventListener('DOMContentLoaded', function () {
+  var next = document.querySelector('.portfolio-next');
+  var prev = document.querySelector('.portfolio-prev');
+  var slider = document.querySelector('.portfolio-slider');
+  if (!slider) return;
+
+  var scrollAmount = Math.round(slider.clientWidth * 0.8);
+
+  function goNext() {
+    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  }
+  function goPrev() {
+    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  }
+
+  if (next) next.addEventListener('click', goNext);
+  if (prev) prev.addEventListener('click', goPrev);
+
+  // Recompute on resize for responsiveness
+  window.addEventListener('resize', function () {
+    scrollAmount = Math.round(slider.clientWidth * 0.8);
+  });
+});
